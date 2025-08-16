@@ -745,6 +745,70 @@
                 font-size: 0.7rem;
             }
         }
+         /* Css by deepseack */
+        /* Add this at the end of your existing CSS, before the closing </style> tag */
+
+/* Fix for mobile view - header above phone navigation */
+@media (max-width: 768px) {
+    html, body {
+        height: 100%;
+        overflow: hidden;
+    }
+    
+    .container {
+        height: 100vh;
+        padding-top: env(safe-area-inset-top);
+        padding-bottom: env(safe-area-inset-bottom);
+    }
+    
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        padding-top: env(safe-area-inset-top);
+        height: 60px;
+    }
+    
+    main {
+        margin-top: 60px;
+        height: calc(100vh - 60px - env(safe-area-inset-bottom));
+        overflow: hidden;
+    }
+    
+    .chat-area {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+    
+    .messages {
+        flex: 1;
+        padding-bottom: 70px;
+        overflow-y: auto;
+    }
+    
+    .input-area {
+        position: sticky;
+        bottom: env(safe-area-inset-bottom);
+        background-color: white;
+        padding: 8px;
+        border-top: 1px solid #e0e0e0;
+    }
+    
+    /* Adjust for very small screens */
+    @media (max-width: 480px) {
+        header {
+            height: 50px;
+        }
+        
+        main {
+            margin-top: 50px;
+            height: calc(100vh - 50px - env(safe-area-inset-bottom));
+        }
+    }
+}
         
     </style>
 </head>
@@ -1417,3 +1481,4 @@
 </body>
 
 </html>
+
